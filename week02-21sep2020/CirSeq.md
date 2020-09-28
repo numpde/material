@@ -21,7 +21,7 @@ Bowtie 2 and custom analysis software are used for sequence mapping,
 identifying and aligning repeats.
 A majority-vote consensus is established between redundant reads
 and 
-error probabilities are estimated.
+average error probabilities for each genomic position of the consensus are estimated.
 
 Source: [1, Methods].
 
@@ -36,7 +36,8 @@ Source: [1, Main].
 The statistical significance of mutations detected was determined by a one-sided binomial test in R
 using the average estimated error probability at each genome position as the null probability of success.
 The accuracy of frequencies was estimated using the standard error of a binomial distribution. 
-A regression model based on classical population genetics was used to estimate fitness (relative growth rates of alleles).
+Further, to reduce the error rate of allelic frequency estimations, Bayesian autoregression model based on classical population genetics was used to estimate fitness (relative growth rates of alleles) by incorporating genetic drift through simulating random fluctuations in variant frequencies. 
+Rate of mutation accumulation at each passage was estimated by the difference in the number of expected de novo mutations and observed mutations divided by total number of sequenced bases. 
 
 Source: [1, Methods summary], [1, Eqn (1)].
 
